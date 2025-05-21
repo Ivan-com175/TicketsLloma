@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #1e1e2f;
+  color: #f0f0f5;
+  line-height: 1.6;
+}
+
+nav {
+  background: #2c2c3c;
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  border-bottom: 2px solid #444;
+}
+
+nav a {
+  color: #f0f0f5;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00d1b2;
+}
+
+.page {
+  display: none;
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #2a2a40;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #3a3a50;
+  color: #f0f0f5;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #bbb;
+}
+
+button {
+  background-color: #00d1b2;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00b89c;
+}
+
+#ticketList div {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #3a3a50;
+  border-radius: 8px;
+}
+
+#ticketList strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #555;
+  margin-top: 1rem;
+}

@@ -1,0 +1,148 @@
+[debug] [2025-05-21T10:27:51.169Z] ----------------------------------------------------------------------
+[debug] [2025-05-21T10:27:51.173Z] Command:       C:\Users\ivanc\DOCUME~1\firebase-tools-instant-win.exe C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\bin\firebase deploy -p ?
+[debug] [2025-05-21T10:27:51.173Z] CLI Version:   14.4.0
+[debug] [2025-05-21T10:27:51.173Z] Platform:      win32
+[debug] [2025-05-21T10:27:51.173Z] Node Version:  v20.18.2
+[debug] [2025-05-21T10:27:51.174Z] Time:          Wed May 21 2025 12:27:51 GMT+0200 (GMT+02:00)
+[debug] [2025-05-21T10:27:51.174Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-21T10:27:51.439Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-21T10:27:51.439Z] > authorizing via signed-in user (ivancamps525@gmail.com)
+[debug] [2025-05-21T10:27:51.439Z] [iam] checking project sistema-tickets-lalloma for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-05-21T10:27:51.441Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:51.441Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:51.442Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sistema-tickets-lalloma:testIamPermissions [none]
+[debug] [2025-05-21T10:27:51.443Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sistema-tickets-lalloma:testIamPermissions x-goog-quota-user=projects/sistema-tickets-lalloma
+[debug] [2025-05-21T10:27:51.443Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sistema-tickets-lalloma:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-21T10:27:52.482Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sistema-tickets-lalloma:testIamPermissions 200
+[debug] [2025-05-21T10:27:52.482Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sistema-tickets-lalloma:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-05-21T10:27:52.483Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:52.483Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:52.483Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/sistema-tickets-lalloma/serviceAccounts/sistema-tickets-lalloma@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-05-21T10:27:52.483Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/sistema-tickets-lalloma/serviceAccounts/sistema-tickets-lalloma@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-05-21T10:27:53.317Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/sistema-tickets-lalloma/serviceAccounts/sistema-tickets-lalloma@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-05-21T10:27:53.318Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/sistema-tickets-lalloma/serviceAccounts/sistema-tickets-lalloma@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-05-21T10:27:53.320Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:53.320Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:27:53.321Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma [none]
+[debug] [2025-05-21T10:27:53.797Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma 200
+[debug] [2025-05-21T10:27:53.797Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma {"projectId":"sistema-tickets-lalloma","projectNumber":"264685916708","displayName":"Sistema Tickets LaLloma","name":"projects/sistema-tickets-lalloma","resources":{"hostingSite":"sistema-tickets-lalloma"},"state":"ACTIVE","etag":"1_f8a794d5-a9ba-4334-a5f5-adcf11bf1e09"}
+[debug] [2025-05-21T10:27:53.801Z] Specified "public" directory "?" does not exist; Deploy to Hosting site "sistema-tickets-lalloma-7b45a" may fail or be empty.
+[info] 
+[info] === Deploying to 'sistema-tickets-lalloma'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2025-05-21T10:27:54.077Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at Object.isAbsolute (node:path:453:5)
+    at Config.path (C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\config.js:130:18)
+    at getChildEnvironment (C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:56:49)
+    at runTargetCommands (C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:77:14)
+    at C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:151:24
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async chain (C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\deploy\index.js:42:9)
+    at async deploy (C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\deploy\index.js:118:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-05-21T10:28:15.485Z] ----------------------------------------------------------------------
+[debug] [2025-05-21T10:28:15.488Z] Command:       C:\Users\ivanc\DOCUME~1\firebase-tools-instant-win.exe C:\Users\ivanc\.cache\firebase\tools\lib\node_modules\firebase-tools\lib\bin\firebase init
+[debug] [2025-05-21T10:28:15.489Z] CLI Version:   14.4.0
+[debug] [2025-05-21T10:28:15.489Z] Platform:      win32
+[debug] [2025-05-21T10:28:15.489Z] Node Version:  v20.18.2
+[debug] [2025-05-21T10:28:15.489Z] Time:          Wed May 21 2025 12:28:15 GMT+0200 (GMT+02:00)
+[debug] [2025-05-21T10:28:15.489Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-05-21T10:28:15.754Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-05-21T10:28:15.755Z] > authorizing via signed-in user (ivancamps525@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\ivanc\Documents\Sistema de Tickets LaLloma
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-05-21T10:28:50.140Z] Using project from CLI flag: sistema-tickets-lalloma
+[debug] [2025-05-21T10:28:50.144Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:28:50.145Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:28:50.150Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma [none]
+[debug] [2025-05-21T10:28:50.681Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma 200
+[debug] [2025-05-21T10:28:50.681Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma {"projectId":"sistema-tickets-lalloma","projectNumber":"264685916708","displayName":"Sistema Tickets LaLloma","name":"projects/sistema-tickets-lalloma","resources":{"hostingSite":"sistema-tickets-lalloma"},"state":"ACTIVE","etag":"1_f8a794d5-a9ba-4334-a5f5-adcf11bf1e09"}
+[info] i  Using project sistema-tickets-lalloma (Sistema Tickets LaLloma) 
+[info] 
+=== Hosting Setup
+[debug] [2025-05-21T10:28:50.697Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:28:50.697Z] Checked if tokens are valid: true, expires at: 1747826755112
+[debug] [2025-05-21T10:28:50.697Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma [none]
+[debug] [2025-05-21T10:28:51.097Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma 200
+[debug] [2025-05-21T10:28:51.097Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sistema-tickets-lalloma {"projectId":"sistema-tickets-lalloma","projectNumber":"264685916708","displayName":"Sistema Tickets LaLloma","name":"projects/sistema-tickets-lalloma","resources":{"hostingSite":"sistema-tickets-lalloma"},"state":"ACTIVE","etag":"1_f8a794d5-a9ba-4334-a5f5-adcf11bf1e09"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-05-21T10:29:34.033Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-05-21T10:29:34.269Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-05-21T10:29:34.269Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.8.0","browserURL":"https://www.gstatic.com/firebasejs/11.8.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.8.0/firebase.tgz"},"live":{"version":"11.8","browserURL":"https://www.gstatic.com/firebasejs/live/11.8/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.8/firebase.tgz"},"components":{"ai":"https://www.gstatic.com/firebasejs/11.8.0/firebase-ai.js","analytics":"https://www.gstatic.com/firebasejs/11.8.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.8.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.8.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.8.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.8.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.8.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.8.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.8.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.8.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.8.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.8.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.8.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.8.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.8.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.8.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.8.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.8.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\ivanc\Documents\Sistema de Tickets LaLloma is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=509237275&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-05-21T10:31:36.087Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-05-21T10:31:36.087Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-05-21T10:31:36.543Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-05-21T10:31:36.543Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-05-21T10:31:36.548Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-05-21T10:31:37.125Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-05-21T10:31:37.126Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"Ivan-com175","id":55110572,"node_id":"MDQ6VXNlcjU1MTEwNTcy","avatar_url":"https://avatars.githubusercontent.com/u/55110572?v=4","gravatar_id":"","url":"https://api.github.com/users/Ivan-com175","html_url":"https://github.com/Ivan-com175","followers_url":"https://api.github.com/users/Ivan-com175/followers","following_url":"https://api.github.com/users/Ivan-com175/following{/other_user}","gists_url":"https://api.github.com/users/Ivan-com175/gists{/gist_id}","starred_url":"https://api.github.com/users/Ivan-com175/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Ivan-com175/subscriptions","organizations_url":"https://api.github.com/users/Ivan-com175/orgs","repos_url":"https://api.github.com/users/Ivan-com175/repos","events_url":"https://api.github.com/users/Ivan-com175/events{/privacy}","received_events_url":"https://api.github.com/users/Ivan-com175/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":0,"public_gists":0,"followers":0,"following":0,"created_at":"2019-09-09T20:17:11Z","updated_at":"2025-05-21T10:31:07Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":0,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as Ivan-com175 
+[info] 
+[debug] [2025-05-21T10:31:43.794Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-05-21T10:31:44.176Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2025-05-21T10:31:44.176Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-05-21T10:33:52.349Z] >>> [apiv2][query] GET https://api.github.com/repos/C:\Users\ivanc\Documents\Sistema de Tickets LaLloma/actions/secrets/public-key type=owner
+[debug] [2025-05-21T10:33:52.830Z] <<< [apiv2][status] GET https://api.github.com/repos/C:\Users\ivanc\Documents\Sistema de Tickets LaLloma/actions/secrets/public-key 404
+[debug] [2025-05-21T10:33:52.831Z] <<< [apiv2][body] GET https://api.github.com/repos/C:\Users\ivanc\Documents\Sistema de Tickets LaLloma/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
+[debug] [2025-05-21T10:36:44.317Z] >>> [apiv2][query] GET https://api.github.com/repos/Ivan-com175/IncidenciasLlomadelMas/actions/secrets/public-key type=owner
+[debug] [2025-05-21T10:36:44.802Z] <<< [apiv2][status] GET https://api.github.com/repos/Ivan-com175/IncidenciasLlomadelMas/actions/secrets/public-key 404
+[debug] [2025-05-21T10:36:44.802Z] <<< [apiv2][body] GET https://api.github.com/repos/Ivan-com175/IncidenciasLlomadelMas/actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest/actions/secrets#get-a-repository-public-key","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+
+  
+  <script type="module">
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    
+    // Reemplaza con tu configuración real
+    const firebaseConfig = {
+      apiKey: "AIzaSyCBYjoBnAWZG3uvZdFfaUVDKoSwTtOnB0k",
+      authDomain: "sistema-tickets-lalloma.firebaseapp.com",
+      projectId: "sistema-tickets-lalloma",
+      storageBucket: "sistema-tickets-lalloma.firebasestorage.app",
+      messagingSenderId: "264685916708",
+      appId: "1:264685916708:web:6b49ff08e50147572e3eb1"
+      measurementId: "G-0X96RVH7WP"
+    };
+
+    // Inicializar Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
+
+    // Verifica que sea admin
+    onAuthStateChanged(auth, async (user) => {
+      const content = document.getElementById("contenido");
+      const mensaje = document.getElementById("mensaje");
+
+      if (user) {
+        const accesoRef = doc(db, "acceso", user.uid);
+        const accesoSnap = await getDoc(accesoRef);
+
+        if (accesoSnap.exists() && accesoSnap.data().rol === "admin") {
+          content.style.display = "block";
+          mensaje.textContent = "Bienvenido al panel de administración.";
+        } else {
+          content.style.display = "none";
+          mensaje.textContent = "No tienes permisos para ver este panel.";
+        }
+      } else {
+        content.style.display = "none";
+        mensaje.textContent = "Debes iniciar sesión.";
+      }
+    });
+
+    // Función para autorizar usuarios
+    window.autorizar = async function () {
+      const uid = document.getElementById("uid").value.trim();
+      const rol = document.getElementById("rol").value;
+      const msg = document.getElementById("msg");
+
+      if (!uid) {
+        msg.textContent = "UID requerido.";
+        return;
+      }
+
+      try {
+        await setDoc(doc(db, "acceso", uid), {
+          autorizado: true,
+          rol: rol
+        });
+        msg.style.color = "green";
+        msg.textContent = "Acceso otorgado al usuario con rol: " + rol;
+      } catch (e) {
+        msg.style.color = "red";
+        msg.textContent = "Error: " + e.message;
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 2em;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    input, select, button {
+      display: block;
+      width: 300px;
+      padding: 0.6em;
+      margin: 0.8em 0;
+    }
+    button {
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #contenido {
+      display: none;
+    }
+    #msg {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Panel de Administración</h2>
+<p id="mensaje">Verificando permisos...</p>
+
+<div id="contenido">
+  <input id="uid" placeholder="UID del usuario">
+  <select id="rol">
+    <option value="usuario">usuario</option>
+    <option value="admin">admin</option>
+  </select>
+  <button onclick="autorizar()">Dar acceso</button>
+  <p id="msg"></p>
+</div>
+
+</body>
+</html>

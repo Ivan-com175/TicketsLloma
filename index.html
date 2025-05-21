@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Tickets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a onclick="navigate('login')">Login</a>
+  <a onclick="navigate('tickets')">Crear Tickets</a>
+  <a onclick="navigate('admin')">Ver/Editar Tickets</a>
+  <a onclick="navigate('panel')">Panel Admin</a>
+</nav>
+
+<!-- Login Page -->
+<div id="login" class="page active">
+  <h2>Inicio de sesión</h2>
+  <input id="username" placeholder="Usuario">
+  <input id="password" type="password" placeholder="Contraseña">
+  <button onclick="login()">Entrar</button>
+  <p id="loginMsg"></p>
+</div>
+
+<!-- Ticket Creation -->
+<div id="tickets" class="page">
+  <h2>Crear Ticket</h2>
+  <input id="ticketTitle" placeholder="Título">
+  <textarea id="ticketDesc" placeholder="Descripción"></textarea>
+  <button onclick="crearTicket()">Crear</button>
+</div>
+
+<!-- Ticket Admin Page -->
+<div id="admin" class="page">
+  <h2>Ver y Editar Tickets</h2>
+  <div id="ticketList"></div>
+</div>
+
+<!-- Admin Panel -->
+<div id="panel" class="page">
+  <h2>Panel de Administración</h2>
+  <p>Solo accesible por administradores.</p>
+</div>
+
+<script>
+  let user = null;
+
+  function navigate(page) {
+    if (page === 'panel' && (!user || !user.isAdmin)) {
+      alert("Acceso denegado. Solo administradores.");
+      return;
+    }
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(page).classList.add('active');
+    if (page === 'admin') mostrarTickets();
+  }
+
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Simulamos login
+    if (username === 'admin' && password === 'admin') {
+      user = { name: 'admin', isAdmin: true };
+    } else if (username && password) {
+      user = { name: username, isAdmin: false };
+    } else {
+      document.getElementById('loginMsg').textContent = "Credenciales inválidas.";
+      return;
+    }
+
+    document.getElementById('loginMsg').textContent = `Bienvenido, ${user.name}`;
+    navigate('tickets');
+  }
+
+  function crearTicket() {
+    const title = document.getElementById('ticketTitle').value;
+    const desc = document.getElementById('ticketDesc').value;
+    if (!title || !desc) return alert("Completa todos los campos.");
+
+    const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    tickets.push({ id: Date.now(), title, desc });
+    localStorage.setItem('tickets', JSON.stringify(tickets));
+    alert("Ticket creado.");
+    document.getElementById('ticketTitle').value = "";
+    document.getElementById('ticketDesc').value = "";
+  }
+
+  function mostrarTickets() {
+    const container = document.getElementById('ticketList');
+    container.innerHTML = '';
+    const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    tickets.forEach(t => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <strong>${t.title}</strong>
+        <p>${t.desc}</p>
+        <button onclick="editarTicket(${t.id})">Editar</button>
+        <button onclick="eliminarTicket(${t.id})">Eliminar</button>
+        <hr>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  function eliminarTicket(id) {
+    let tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    tickets = tickets.filter(t => t.id !== id);
+    localStorage.setItem('tickets', JSON.stringify(tickets));
+    mostrarTickets();
+  }
+
+  function editarTicket(id) {
+    const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
+    const ticket = tickets.find(t => t.id === id);
+    const nuevoTitulo = prompt("Nuevo título:", ticket.title);
+    const nuevaDesc = prompt("Nueva descripción:", ticket.desc);
+    if (nuevoTitulo && nuevaDesc) {
+      ticket.title = nuevoTitulo;
+      ticket.desc = nuevaDesc;
+      localStorage.setItem('tickets', JSON.stringify(tickets));
+      mostrarTickets();
+    }
+  }
+</script>
+
+</body>
+</html>
